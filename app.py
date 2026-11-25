@@ -11,35 +11,41 @@ st.set_page_config(page_title="TokenAudit | JWT Inspector & Verifier", layout="c
 st.markdown("""
 <style>
     .block-container { padding-top: 2.5rem; padding-bottom: 2.5rem; max-width: 760px; }
-    h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; color: #111111; }
+    h1, h2, h3 { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: 600; color: #18221E; }
+    p, label, .stMarkdown { font-family: "Segoe UI", system-ui, sans-serif; color: #18221E; }
     .stButton > button {
-        background-color: #111111;
+        background-color: #26463B;
         color: #FFFFFF;
-        border: 1px solid #111111;
-        border-radius: 3px;
+        border: 1px solid #26463B;
+        border-radius: 4px;
         padding: 0.45rem 1.2rem;
         font-weight: 500;
     }
     .stButton > button:hover {
-        background-color: #333333;
-        border-color: #333333;
+        background-color: #1A3129;
+        border-color: #1A3129;
         color: #FFFFFF;
     }
     .report-box {
-        border: 1px solid #D4D4D4;
+        border-left: 4px solid #26463B;
+        border-top: 1px solid #D8E2DC;
+        border-right: 1px solid #D8E2DC;
+        border-bottom: 1px solid #D8E2DC;
         background-color: #FFFFFF;
         padding: 1.2rem;
-        border-radius: 3px;
+        border-radius: 4px;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
     .tag {
         display: inline-block;
-        padding: 2px 8px;
-        font-size: 0.8rem;
+        padding: 2px 9px;
+        font-size: 0.78rem;
         font-weight: 600;
-        border: 1px solid #111111;
-        border-radius: 2px;
+        background-color: #E5EFEA;
+        color: #26463B;
+        border: 1px solid #B5C9BF;
+        border-radius: 3px;
         text-transform: uppercase;
     }
 </style>
@@ -185,8 +191,8 @@ with tab_inspect:
                 st.markdown(f"""
                 <div class="report-box">
                     <span class="tag">{status}</span>
-                    <h3 style="margin-top: 0.6rem; margin-bottom: 0.25rem;">Algorithm: {header.get('alg', 'Unknown')}</h3>
-                    <p style="color: #444444; font-size: 0.9rem; margin-bottom: 0;">Signature Check: <strong>{sig_result}</strong></p>
+                    <h3 style="margin-top: 0.65rem; margin-bottom: 0.25rem;">Algorithm: {header.get('alg', 'Unknown')}</h3>
+                    <p style="color: #3D4B45; font-size: 0.9rem; margin-bottom: 0;">Signature Check: <strong>{sig_result}</strong></p>
                 </div>
                 """, unsafe_allow_html=True)
 
